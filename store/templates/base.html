@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <title style="color: orangered;">PlanetX | Boutique de Vente en ligne</title>
+
+  <style>
+    nav{
+      background-color: orange;
+    }
+    .one-edge-shadow {
+              box-shadow: 0 8px 2px -5px orangered;
+}
+.display-8{
+  font-weight: 200;
+  font-size: 30px;
+}
+  </style>
+</head>
+
+<body>
+
+  <!-- navbar -->
+
+  <nav class="one-edge-shadow 
+  sticky-top navbar 
+  navbar-expand-lg
+   navbar-light bg-warning">
+    <a class="navbar-brand" href="/"><span style="font-size: medium;color:green;size:4rem;font-weight: bolder;">Planet</span><span style="color: white;font-size: medium;size:4rem;font-weight: bolder;">X</span></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon" style="font-weight: bolder;">PlanetX</span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/store"><marquee behavior="scroll" direction=""  width="800" style="color: white;">BIENVENUE DANS VOTRE BOUTIQUE EN LIGNE, PlanetX! </marquee><span class="sr-only">(current)</span></a>
+        </li>
+
+      </ul>
+
+
+      <ul class=" navbar-nav my-2 my-lg-0">
+        <li class="nav-item ">
+          <a class="nav-link" href="/cart" style="color: white;font:bold;font-weight: bolder;">Panier 
+            <span class="badge badge-danger">{{request.session.cart.keys|length}}</span>
+            <span class="sr-only">(current)</span></a>
+        </li>
+        {% if request.session.customer %}
+        <li class="nav-item ">
+          <a class="nav-link" href="/orders" style="color:white;font-weight: bolder;">{{request.customer.last_name}}<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="/orders" style="color:white;font-weight: bolder;">Commandes<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="/logout" style="color:white;font-weight: bolder;">Déconnexion<span class="sr-only">(current)</span></a>
+        </li>
+        {% else %}
+       
+        <li class="nav-item ">
+          <a class="nav-link" href="/signup" style="color:white;font-weight: bolder;">Inscription<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="/login" style="color:white; font-weight: bolder;">Connexion<span class="sr-only">(current)</span></a>
+        </li>
+        {% endif %}
+
+
+
+      </ul>
+
+
+    </div>
+  </nav>
+
+
+    {% block content %}{% endblock %}
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <footer class="text-muted
+            one-edge-shadow 
+            sticky-top navbar 
+            navbar-expand-lg
+            navbar-light bg-warning ">
+      <div class="container">
+        <p class="float-right">
+          <a href="/"></a>
+        </p>
+        <p style="font-weight: bolder;color: white;">Tout droit reservé &copy; <a href="/" style="text-decoration: none;">PlanetX</a>, Boutique en ligne!</p>
+        <p> <a href="/"></a></p>
+      </div>
+    </footer>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
